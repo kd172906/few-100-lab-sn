@@ -1,20 +1,28 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container">
+
+  <h1>Tip Calculator</h1>
+    <div class="input-group mb-2 mr-sm-2">
+      <div class="input-group-prepend">
+          <div class="input-group-text">$</div>
+      </div>
+      <input type="number" class="form-control" id=billAmountId value={{totalBill}} #inputValue (input)="onSearchChange(inputValue.value)">
+      <label *ngIf="error" class="form-control" style="border-top:0px;border-bottom:0px;border-right:0px;color:red">Bill amount cannot be less than 0.</label>
+  </div>
+  <div>
+          <div class="btn-group">
+                          <input class="btn btn-secondary" style="cursor: grab;width: 70px" #box1 (click)="getButtonText(box1.value)" value="10%"/>
+                          <input class="btn  btn-secondary" style="cursor: grab;width: 70px" #box2 (click)="getButtonText(box2.value)" value="15%"/>
+                          <input class="btn  btn-secondary" style="cursor: grab;width: 70px" #box3 (click)="getButtonText(box3.value)" value="20%"/>
+          </div>
+          <div>
+          <label>You are tipping {{tipPercentage}}</label>
+          </div>
+          <div>
+            <div class="form-group">
+              <input type="text" class="form-control"  value="Bill Amount: {{billAmount}}" >
+              <input type="text" class="form-control"   value="Tip Percentage: {{tipPercentageText}}">
+              <input type="text" class="form-control"  value="Amount of tip: {{amountOfTip}}">
+              <input type="text" class="form-control"  value="Total to be Paid: {{totalToBePaid}}">
+            </div>
+          </div>
 
